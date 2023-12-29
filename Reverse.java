@@ -13,7 +13,7 @@ public class Reverse {
 		String rev = "";
 		int i = 0;
 		if (len%2==0) {
-			middle = str.charAt(len/2); 
+			middle = str.charAt((len/2)-1); 
 		}
 		else{
 			middle = str.charAt((len/2)); 
