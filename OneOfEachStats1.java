@@ -1,7 +1,11 @@
+import java.util.Random;
+
 public class OneOfEachStats1 
 {
 	public static void main (String[] args)
 	{
+        int seed = Integer.parseInt(args[1]);
+        Random generator = new Random(seed);
         int T = Integer.parseInt(args[0]);
         int totalKids = 0;
         int with2 = 0;// counts how many famtlies are with 2 children
@@ -9,13 +13,13 @@ public class OneOfEachStats1
         int with4 = 0;
         for (int i =0; i < T; i++)
         {
-            double gender = (Math.random());// below 0.5 - boy, above 0.5 - girl (50 50 chance)
+            double gender = generator.nextDouble();// below 0.5 - boy, above 0.5 - girl (50 50 chance)
             int c = 0;// counts the children in each family
             if (gender<0.5)
             {
                 while (gender<0.5)
                 {
-                    gender = (Math.random());
+                    gender = generator.nextDouble();
                     c++;
                 }
                 c++;
@@ -37,7 +41,7 @@ public class OneOfEachStats1
             {
                 while (gender>0.5)
                 {
-                    gender = (Math.random());
+                    gender = generator.nextDouble();
                     c++;
                 }
                 c++; 
